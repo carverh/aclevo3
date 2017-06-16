@@ -1,6 +1,6 @@
 import os
 gettext = lambda s: s
-DATA_DIR = os.path.dirname(os.path.dirname(__file__) + '/..')
+DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
 Django settings for aclevo project.
 
