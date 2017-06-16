@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(+jk4$-a3c30tb0=!dide(9jb+p40vp6cf%+t-abeyuv%518p9'
+SECRET_KEY = os.environ.get('DJANGOCMS_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGOCMS_DEBUG')
 
 ALLOWED_HOSTS = [
 	'*'
@@ -263,8 +263,8 @@ THUMBNAIL_PROCESSORS = (
 
 DJANGOCMS_FORMS_WIDGET_CSS_CLASSES = {'__all__': ('form-control', ) }
 
-DJANGOCMS_FORMS_RECAPTCHA_PUBLIC_KEY = '6LfMQSIUAAAAAF92HhRfRJKiHhEQGtKrMc71OpJl'
-DJANGOCMS_FORMS_RECAPTCHA_SECRET_KEY = '6LfMQSIUAAAAAOYh2MsXVJtJBvFo59CfSjpqAgvF'
+DJANGOCMS_FORMS_RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_SITE')
+DJANGOCMS_FORMS_RECAPTCHA_SECRET_KEY = os.environ.get('RECAPTCHA_SECRET')
 
 META_SITE_PROTOCOL = 'http'
 META_USE_SITES = True
