@@ -29,17 +29,7 @@ SECRET_KEY = '(+jk4$-a3c30tb0=!dide(9jb+p40vp6cf%+t-abeyuv%518p9'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-	'aclevo.xyz',
-	'0.0.0.0:8000',
-	'10.0.0.17:8000',
-	'10.0.0.17',
-	'0.0.0.0',
-	'localhost',
-	'localhost:8000',
-	'aclevo3.westus.aclevolb.ml',
-	'98.247.24.28',
-	'10.0.0.20',
-	'10.0.0.20:8000'
+	'*'
 ]
 
 
