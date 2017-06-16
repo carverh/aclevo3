@@ -1,0 +1,43 @@
+/* Copyright (c) 2017 Carver Harrison All Rights Reserved. */
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.blogpost-fullimage {
+  object-position: center;
+  object-fit: cover;
+  width: 100%
+}
+
+.blogpost-content {
+  margin: 8px;
+}
+
+.display-1 {
+  font-size: 6rem;
+  font-weight: 100;
+  line-height: 1.1;
+}
+
+.display-2 {
+  font-size: 5.5rem;
+  font-weight: 100;
+  line-height: 1.1;
+}
+
+.display-3 {
+  font-size: 4.5rem;
+  font-weight: 100;
+  line-height: 1.1;
+}
+
+.display-4 {
+  font-size: 3.5rem;
+  font-weight: 100;
+  line-height: 1.1;
+}

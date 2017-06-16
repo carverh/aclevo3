@@ -12,7 +12,6 @@ setup(name='aclevo3',
 	packages=find_packages(),
 	include_package_data=True,
 	description='Aclevo v3',
-	install_requires=open('%s/mywebsite/requirements/project.txt' % os.environ.get('OPENSHIFT_REPO_DIR', PROJECT_ROOT)).readlines(),
+	install_requires=open('%s/requirements.txt' % os.environ.get('OPENSHIFT_REPO_DIR', PROJECT_ROOT)).readlines(),
 #	install_requires=['Mezzanine==1.2.4',],
 )
-
