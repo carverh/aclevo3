@@ -16,6 +16,17 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+if os.environ.has_key('OPENSHIFT_APP_NAME'):
+    DB_NAME = os.environ['OPENSHIFT_APP_NAME']
+if os.environ.has_key('OPENSHIFT_POSTGRESQL_DB_USERNAME'):
+    DB_USER = os.environ['OPENSHIFT_POSTGRESQL_DB_USERNAME']
+if os.environ.has_key('OPENSHIFT_POSTGRESQL_DB_PASSWORD'):
+    DB_PASSWD = os.environ['OPENSHIFT_POSTGRESQL_DB_PASSWORD']
+if os.environ.has_key('OPENSHIFT_POSTGRESQL_DB_HOST'):
+    DB_HOST = os.environ['OPENSHIFT_POSTGRESQL_DB_HOST']
+if os.environ.has_key('OPENSHIFT_POSTGRESQL_DB_PORT'):
+    DB_PORT = os.environ['OPENSHIFT_POSTGRESQL_DB_PORT']
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -238,15 +249,14 @@ CMS_PERMISSION = True
 CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
-    'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': ''
-    }
+	'default': {
+	    'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+	    'NAME': DB_NAME,               # Or path to database file if using sqlite3.
+	    'USER': DB_USER,               # Not used with sqlite3.
+	    'PASSWORD': DB_PASSWD,         # Not used with sqlite3.
+	    'HOST': DB_HOST,               # Set to empty string for localhost. Not used with sqlite3.
+	    'PORT': DB_PORT,               # Set to empty string for default. Not used with sqlite3.
+	}
 }
 
 MIGRATION_MODULES = {
