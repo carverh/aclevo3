@@ -170,8 +170,6 @@ INSTALLED_APPS = (
     'taggit_autosuggest',
     'meta',
     'djangocms_blog',
-    'django_markwhat',
-    'cmsplugin_markdown',
     'aclevo'
 )
 
